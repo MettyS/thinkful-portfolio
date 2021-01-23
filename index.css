@@ -155,8 +155,10 @@ margin-top: 0;
 text-align: center;
 background-size: cover;
 -webkit-background-size: cover;
--moz-background-size: cover;
+-moz-background-size: covers;
 -o-background-size: cover;
+
+background-image: url('./images/hero/together-bright.jpg')
 }
 
 header h1 {
@@ -171,6 +173,10 @@ display: block;
 width: 100%;
 top: 0;
 text-align: left;
+
+
+background-color: rgba(238,238,238,0.8) 
+/* hsl(0, 0%, 93%); */
 }
 
 header nav ul.nav-items,
