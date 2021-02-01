@@ -61,7 +61,7 @@ General styles (General Module, wrapping around the modules below)
 */
 
 body {
-	font-family: sans-serif;
+	font-family: 'Source Sans Pro', sans-serif;
 	font-size: 20px;
 	color: rgb(0, 0, 0);
 	background-color: #eee;
@@ -73,17 +73,19 @@ body {
 
 a {
 	text-decoration: none;
+	color: black;
 }
 
 a:hover {
-	color: red;
+	border-bottom: 1px black solid;
 }
 
-h1, h2, h3, h4, h5, h6 {
+/* h1, h2, h3, h4, h5, h6 {
 	font-family: cursive;
-}
+} */
 
 h2 {
+	font-size: 140%;
 	color: #0E4EB4;
 }
 
@@ -92,7 +94,7 @@ input, select, button {
 	padding: 10px 25px;
 	margin: 5px;
 	border-radius: 15px;
-	color: orange;
+	color: black;
 }
 
 button {
@@ -101,17 +103,17 @@ button {
 }
 
 button:hover {
-	background-color: #EFC43F;
+	background-color: white solid;
 	color: black;
 }
 
-button[type=submit] {
+/* button[type=submit] {
 	background-color: transparent;
 	border: 2px solid #C01C17;
-}
+} */
 
 button[type=submit]:hover {
-	color: #C01C17;
+	cursor: pointer;
 }
 
 label {
@@ -171,7 +173,9 @@ header nav {
 	width: 100%;
 	top: 0;
 	text-align: left;
-	background-color: rgba(238, 238, 238, 0.8)
+	background-color: rgb(255, 255, 255);
+
+	z-index: 100;
 	/* hsl(0, 0%, 93%); */
 }
 
@@ -183,7 +187,7 @@ header nav ul.nav-items, header nav div.logo {
 header nav div.logo {
 	padding: 0px 20px;
 	color: #163a8b;
-	font-family: "Caveat", cursive;
+	font-family: 'Source Sans Pro', sans-serif;
 	font-size: 155%;
 }
 
@@ -210,12 +214,16 @@ Content styles (Main Module)
 
 section {
 	width: 85%;
-	margin: 30px auto;
-	padding-top: 20px;
+	margin: 0px auto;
+	padding-top: 50px;
 	padding-bottom: 20px;
-	border-bottom: 2px solid green;
+	border-bottom: 2px solid #163a8b;
 	text-align: left;
-	font-family: "Roboto", serif;
+	font-family: 'Source Sans Pro', sans-serif;
+}
+
+section:last-child {
+	border: none;
 }
 
 /* About */
@@ -247,35 +255,44 @@ section.projects {
 
 section.projects div.projects-container {
 	display: flex;
-	flex-flow: row wrap;
-	/* grid-template-columns: 1fr 1fr; */
-	/* grid-auto-rows: minmax(300px, auto); */
-	/* column-gap: 20px; */
-
-	justify-content: space-between;
+	flex-flow: column wrap;
+	text-align: center;
+	/* justify-content: space-between; */
 }
 
 section.projects div.project-container {
-	width: 300px;
-	height: 200px;
-	/* margin-bottom: 5%;
-	margin-top: 2%;
-	margin-right: 2%; */
+	width: 100%;
+	height: 220px;
+	margin-bottom: 40px;
 	border-bottom: 1px solid #ccc;
 	border-right: 1px solid #ccc;
 
-	/* position: relative; */
+	position: relative;
+}
+
+div.project-container .go-icon {
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	margin-top: 5px;
+	margin-right: 10px;
+	width: 70px;
+	height: 30px;
+}
+
+div.project-container .icon-item {
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+}
+
+div.project-container .icon-item img {
+	max-width:100%;
 }
 
 section.projects div.yamma{
 	background-image: linear-gradient(rgba(245, 246, 252, 0), rgba(0, 0, 0, 0.2)), url(./images/projects/yamma_landing.png);
 	background-size: 100%;
-	/* position: absolute;
-	display: cover;
-	position: absolute;
-	display: block;
-	max-width: 100%;
-	min-width: 100%; */
 }
 
 section.projects div.spacedrepetition {
@@ -298,12 +315,65 @@ section.projects div.quizapp {
 } */
 
 section.projects div.project-container h3 {
-	margin-bottom: 15px;
+	padding: 5px 0px;
+	background: rgba(255, 255, 255, .9);
+	/* linear-gradient(rgba(255, 255, 255, 1), rgba(255, 255, 255, .7)) ; */
+	text-align: center;
+	/* margin-bottom: 15px; */
 	font-size: 120%;
 }
 
+/* section.projects div.project-container:hover,
+section.projects div.project-container:hover h3 {
+	background: none;
+} */
+
 section.projects div.project-container div.project-info {
 	display: none;
+	height: 100%;
+	/* display: flex; */
+	flex-flow: column;
+	/* justify-content: space-between; */
+	font-size: 18px;
+	line-height: 1;
+	margin: 0px;
+	text-align: center;
+}
+
+div.project-info p {
+	color: white;
+	margin: 0px;
+}
+
+div.project-info .project-desc {
+	text-align: left;
+	padding-left: 10px;
+	padding-top: 10px;
+}
+
+div.project-info .bottom-panel {
+	align-self: bottom;
+}
+
+div.project-info .project-tools {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+}
+
+.project-tools .tool-item {
+	padding: 5px;
+	margin: 0px 5px;
+	margin-top: 5px;
+	background-color: greenyellow;
+	border-radius: 10px;
+}
+
+section.projects div.project-container:hover {
+	background: black;
+}
+section.projects div.project-container:hover div.project-info {
+	display: flex;
 }
 
 /* section.projects div.project-container div.project-column {
@@ -334,12 +404,39 @@ section.skills div.skill-box {
 	height: 150px;
 	width: 125px;
 	margin-top: 20px;
-	border-width: 1px;
+	text-align: center;
+	/* border-width: 1px;
 	border-style: solid;
-	border-color: red;
+	border-color: red; */
 }
 
 
+/* Contact */
+
+section.contact form {
+	text-align: center;
+}
+
+section.contact form label,
+section.contact form input {
+	display: inline-block;
+}
+
+section.contact form .message-panel label {
+	display: block;
+}
+
+section.contact textarea {
+	border: 1px solid #0E4EB4;
+	border-radius: 10px;
+	padding: 10px;
+	height: 300px;
+	width: 400px;
+}
+
+section.contact .center {
+	text-align: center;
+}
 
 
 /* -------------------------------------
@@ -351,9 +448,24 @@ footer {
 	margin-top: 50px;
 	margin-bottom: 15px;
 	border: 0px;
+	display: flex;
+	flex-flow: row;
+	justify-content: space-between;
+	padding-left: 30px;
+	padding-right: 30px;
 }
 
-footer a {
+footer .icon-item {
+	display: inline-block;
+}
+
+footer .icon-item img {
+	height: 30px;
+	width: 30px;
+}
+
+
+/* footer a {
 	display: block;
 	position: fixed;
 	bottom: 30px;
@@ -363,7 +475,7 @@ footer a {
 
 footer a:hover {
 	color: #081e6f;
-}
+} */
 
 /* -------------------------------------
 place all the desktop styles above this line
@@ -371,3 +483,51 @@ Responsive styles
 (the very last module in the CSS, contains all the media queries and it is dealing with the compatibility with mobiles and tablets)
 place all the mobile tables styles below this line
 */
+
+
+@media all and (min-width: 600px) {
+	
+
+	section.projects div.project-container {
+		width: 350px;
+		height: 220px;
+		margin-bottom: 40px;
+		border-bottom: 1px solid #ccc;
+		border-right: 1px solid #ccc;
+	
+		position: relative;
+	}
+
+}
+
+@media all and (min-width: 730px) {
+	section.projects div.projects-container {
+		text-align: center;
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: space-between;
+	}
+}
+
+@media all and (max-width: 730px) {
+	header nav {
+		position: fixed;
+		display: flex;
+		flex-flow: column;
+		width: 100%;
+		top: 0;
+		text-align: center;
+		background-color: rgb(255, 255, 255);
+	
+		z-index: 100;
+	}
+
+	header h1 {
+		color: white;
+		margin-bottom: 10%;
+		margin-right: 0px;
+		font-size: 150%;
+		text-align: center;
+	}
+
+}
