@@ -53,6 +53,7 @@ Is a short set of CSS rules that resets the styling of all HTML elements to a co
 	-o-padding-after: 0px;
 	-o-padding-start: 0px;
 	-o-padding-end: 0px;
+
 }
 
 /* -------------------------------------
@@ -120,6 +121,7 @@ label {
 	display: block;
 	margin: 10px;
 }
+
 
 /*
 The clearfix Hack: If an element is taller than the element containing it, and it is floated, it will "overflow" outside of its container
@@ -249,10 +251,6 @@ section.about div.text-container {
 
 /* Projects */
 
-section.projects {
-	
-}
-
 section.projects div.projects-container {
 	display: flex;
 	flex-flow: column wrap;
@@ -262,12 +260,48 @@ section.projects div.projects-container {
 
 section.projects div.project-container {
 	width: 100%;
-	height: 220px;
+	height: 420px;
 	margin-bottom: 40px;
 	border-bottom: 1px solid #ccc;
 	border-right: 1px solid #ccc;
+	background: white;
 
-	position: relative;
+	display: flex;
+	flex-flow: column;
+
+	/* position: relative; */
+}
+
+section.projects div.yamma{
+	height: 60%;
+	background-image: linear-gradient(rgba(245, 246, 252, 0), rgba(0, 0, 0, 0.2)), url(./images/projects/yamma_landing.png);
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+section.projects div.spacedrepetition {
+	height: 220px;
+	background-image: linear-gradient(rgba(245, 246, 252, 0), rgba(0, 0, 0, 0.2)), url(./images/projects/spacedrepetition_landing.png);
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+section.projects div.petful {
+	height: 220px;
+	background-image: linear-gradient(rgba(245, 246, 252, 0), rgba(0, 0, 0, 0.2)), url(./images/projects/petful_landing.png);
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+section.projects div.quizapp {
+	height: 220px;
+	background-image: linear-gradient(rgba(245, 246, 252, 0), rgba(0, 0, 0, 0.2)), url(./images/projects/quizapp_landing.png);
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
 }
 
 div.project-container .go-icon {
@@ -290,26 +324,6 @@ div.project-container .icon-item img {
 	max-width:100%;
 }
 
-section.projects div.yamma{
-	background-image: linear-gradient(rgba(245, 246, 252, 0), rgba(0, 0, 0, 0.2)), url(./images/projects/yamma_landing.png);
-	background-size: 100%;
-}
-
-section.projects div.spacedrepetition {
-	background-image: linear-gradient(rgba(245, 246, 252, 0), rgba(0, 0, 0, 0.2)), url(./images/projects/spacedrepetition_landing.png);
-	background-size: 100%;
-}
-
-section.projects div.petful {
-	background-image: linear-gradient(rgba(245, 246, 252, 0), rgba(0, 0, 0, 0.2)), url(./images/projects/petful_landing.png);
-	background-size: 100%;
-}
-
-section.projects div.quizapp {
-	background-image: linear-gradient(rgba(245, 246, 252, 0), rgba(0, 0, 0, 0.2)), url(./images/projects/quizapp_landing.png);
-	background-size: 100%;
-}
-
 /* section.projects div.project-container:last-child {
 	border-bottom: 0;
 } */
@@ -329,8 +343,7 @@ section.projects div.project-container:hover h3 {
 } */
 
 section.projects div.project-container div.project-info {
-	display: none;
-	height: 100%;
+	/* height: 100%; */
 	/* display: flex; */
 	flex-flow: column;
 	/* justify-content: space-between; */
@@ -341,7 +354,7 @@ section.projects div.project-container div.project-info {
 }
 
 div.project-info p {
-	color: white;
+	color: black;
 	margin: 0px;
 }
 
@@ -369,12 +382,7 @@ div.project-info .project-tools {
 	border-radius: 10px;
 }
 
-section.projects div.project-container:hover {
-	background: black;
-}
-section.projects div.project-container:hover div.project-info {
-	display: flex;
-}
+
 
 /* section.projects div.project-container div.project-column {
 	display: inline-block;
@@ -412,6 +420,16 @@ section.skills div.skill-box {
 
 
 /* Contact */
+
+section.contact div.top-panel > div > div.icon-item {
+	display: inline-block;
+}
+
+section.contact div.top-panel > div > div.icon-item img{
+	
+	height: 50px;
+	width: 50px;
+}
 
 section.contact form {
 	text-align: center;
@@ -487,7 +505,7 @@ place all the mobile tables styles below this line
 
 @media all and (min-width: 600px) {
 	
-
+/* 
 	section.projects div.project-container {
 		width: 350px;
 		height: 220px;
@@ -498,6 +516,31 @@ place all the mobile tables styles below this line
 		position: relative;
 	}
 
+	
+
+	section.projects div.project-container div.project-info {
+		display: none;
+	}
+
+	section.projects div.project-container:hover {
+		background: black;
+	}
+	section.projects div.project-container:hover div.project-info {
+		display: flex;
+	} */
+
+}
+@media all and (max-width: 600px) {
+	
+
+	section.about {
+		display: flex;
+		flex-flow: column;
+	}
+	section.about div.left-panel {
+    width: 100%;
+}
+
 }
 
 @media all and (min-width: 730px) {
@@ -507,6 +550,11 @@ place all the mobile tables styles below this line
 		flex-flow: row wrap;
 		justify-content: space-between;
 	}
+	section.projects div.project-container {
+		width: 350px;
+	}
+
+	
 }
 
 @media all and (max-width: 730px) {
@@ -529,5 +577,35 @@ place all the mobile tables styles below this line
 		font-size: 150%;
 		text-align: center;
 	}
+
+}
+
+
+@media all and (max-width: 450px) {
+	section.contact textarea {
+		border: 1px solid #0E4EB4;
+		border-radius: 10px;
+		padding: 10px;
+		height: 300px;
+		width: 100%;
+	}
+
+	header nav ul.nav-items li {
+		display: inline-block;
+		width: auto;
+		padding: 10px 20px;
+		border-right: 2px solid #ddd;
+
+		font-size: 16px;
+	}
+
+	section.projects div.project-container h3 {
+    padding: 5px 0px;
+    background: rgba(255, 255, 255, .9);
+    text-align: center;
+    /* margin-bottom: 15px; */
+    font-size: 100%;
+}
+
 
 }
